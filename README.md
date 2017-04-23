@@ -17,20 +17,20 @@ For each of the nodes, try running the following command to run a broker. The fo
 * **KAFKA_HOST** - give the external FQDN or IP address from which the clients (and the zookeeper) can access the kafka broker
 * **KAFKA_PORT** - Port where the broker will listen
 * **ZOOKEEPER_CONNECT** - list of zookeeper servers along with their ports in a comma separated fashion so that kafka can register themselves
-* **BROKER_ID** - An integer stating the broker id (starting from 0,1,2 till 255)
+* **KAFKA_ID** - An integer stating the broker id (starting from 0,1,2 till 255)
 
 ## Sample script to run a three node/broker cluster
 Run these scripts on individual hosts to create a cluster
 ### Node1
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka1 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=0 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka1 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e KAFKA_ID=0 --name kafka1 jeygeethan/kafka-cluster
 ```
 ### Node2
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e KAFKA_ID=1 --name kafka1 jeygeethan/kafka-cluster
 ```
 
 ### Node3
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e KAFKA_ID=1 --name kafka1 jeygeethan/kafka-cluster
 ```
