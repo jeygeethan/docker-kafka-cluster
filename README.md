@@ -32,5 +32,5 @@ docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPE
 
 ### Node3
 ```
-docker run -p 9092:9092 -e KAFKA_HOST=host_kafka2 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=1 --name kafka1 jeygeethan/kafka-cluster
+docker run -p 9092:9092 -e KAFKA_HOST=host_kafka3 -e KAFKA_PORT=9092 -e ZOOKEEPER_CONNECT=10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181 -e BROKER_ID=2 --name kafka1 jeygeethan/kafka-cluster
 ```
